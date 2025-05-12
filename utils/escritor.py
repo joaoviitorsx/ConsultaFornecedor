@@ -15,7 +15,6 @@ def salvar_resultados(lista_dados, caminho_padrao='resultado.xlsx'):
 
     print(f"[DEBUG] {len(lista_dados)} registros a serem salvos.")
 
-    # Pergunta se o usuário quer salvar
     resposta_salvar = messagebox.askyesno("Salvar Planilha", "Deseja salvar a planilha gerada?")
     print(f"[DEBUG] Resposta do usuário para salvar: {resposta_salvar}")
 
