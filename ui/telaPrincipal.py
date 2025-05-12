@@ -16,7 +16,6 @@ def iniciar_interface():
         if not caminho:
             return
 
-        # Inicia o processo em uma nova thread
         thread = threading.Thread(target=processar_planilha, args=(caminho,))
         thread.start()
 
@@ -56,7 +55,6 @@ def iniciar_interface():
             messagebox.showerror("Erro", f"Ocorreu um erro durante o processamento:\n{e}")
             progress_label.config(text="Erro no processo.")
 
-    # Interface
     janela = tk.Tk()
     janela.title("Consulta de CNPJs")
     janela.geometry("400x250")
