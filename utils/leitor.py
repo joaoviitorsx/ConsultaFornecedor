@@ -30,12 +30,11 @@ def ler_cnpjs(caminho_arquivo):
         print(f"[DEBUG] Coluna identificada como CNPJ: '{coluna_cnpj}'")
         print(f"[DEBUG] Coluna identificada como Código: '{coluna_codigo}'")
 
-        # Limpa e normaliza os dados
         df[coluna_cnpj] = df[coluna_cnpj].astype(str).str.replace(r'\D', '', regex=True).str.zfill(14)
         df[coluna_codigo] = df[coluna_codigo].astype(str)
 
         df_filtrado = df[[coluna_codigo, coluna_cnpj]].dropna()
-        df_filtrado.columns = ['Código', 'CNPJ']  # Renomeia colunas para padrão fixo
+        df_filtrado.columns = ['Código', 'CNPJ']
 
         lista = df_filtrado.to_dict(orient="records")
         print(f"[DEBUG] Total de pares Código+CNPJ extraídos: {len(lista)}")
